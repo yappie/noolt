@@ -130,7 +130,7 @@ Basically `reformat_traceback` receives text representation of traceback
 Controlled production
 =====================
 
-Most of production environment could use usual `noolt` reloading, here is a more
+Most of production environment could use usual `noolt` reloading (i.e. just plain `python -m noolt.serve`), here is a more
 strict version, that uses flag file to detect when to reload (redefine `is_production`
 yourself somehow):
 
