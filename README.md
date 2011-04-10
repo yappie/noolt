@@ -145,7 +145,8 @@ yourself somehow):
     app = App(app_filename)
     if is_production:
         app.set_reload_intervals(-1)  # do not reload
-        app.reformat_traceback = lambda x: True
+        app.reformat_traceback = lambda x: True  # suppress tracebacks 
+                     # (good idea would be to use logging module for tracebacks)
         while 1:
             if os.path.exists(reload_flag_filename):
                 os.unlink(reload_flag_filename)
