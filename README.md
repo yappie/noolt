@@ -69,11 +69,5 @@ Then make changes to `hello_world.py` and instantly see changes appear.
 `hosts` define host and port which the application will respond (you can change
 those "on-fly") and even have many hosts/ports for each application.
 
-If you install `noolt` to system path you can start from your "apps" directory:
-
-    
-and then you can create directories with `index.py` file in them and have
-them auto-served by `noolt`.
-
 I haven't developed `noolt` in quite some time, but I feel it might be useful.
 `noolt` uses CherryPy's excellent WSGI server.
