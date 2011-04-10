@@ -13,7 +13,7 @@ After installing noolt, run from console (terminal):
     cd ~/web/
     python -m noolt.serve
 
-Create file `~/web/app1/index.py`:
+Create file `~/web/app1/index.py` (`mkdir ~/web/app1 && gedit ~/web/app1/index.py`) with these contents:
 
     hosts = "127.0.0.1:8091",
     
