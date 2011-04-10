@@ -32,7 +32,7 @@ Installation
     cd noolt
     sudo python setup.py install
     cd ..
-    rm -rf noolt
+    sudo rm -rf noolt
     
 
 python -m noolt.serve
