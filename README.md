@@ -123,7 +123,7 @@ Currently this can only be done via "low level" (see above) by setting:
     def quiet_traceback(traceback_text):
         return ""
 
-    app.reformat_traceback = lambda(traceback_text): 1
+    app.reformat_traceback = quiet_traceback
     
 Basically `reformat_traceback` receives text representation of traceback
 
