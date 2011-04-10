@@ -127,4 +127,33 @@ Currently this can only be done via "low level" (see above) by setting:
     
 Basically `reformat_traceback` receives text representation of traceback
 
+Controlled production
+=====================
+
+Most of production environment could go away with usual `noolt`, here is a more
+strict version, that uses flag file to detect when to reload (redefine `is_production`
+yourself somehow):
+
+    from noolt.app import App
+    import time, os
+    
+    is_production = True if os.path.exists('.production') else False
+
+    app_filename = 'hello_world.py'
+    reload_flag_filename = '.reload'
+
+    app = App(app_filename)
+    if is_production:
+        app.set_reload_intervals(-1)  # do not reload
+        app.reformat_traceback = lambda x: True
+        while 1:
+            if os.path.exists(reload_flag_filename):
+                os.unlink(reload_flag_filename)
+                app.mark_processes_for_reload()
+            time.sleep(1)
+    else:
+        app = App(app_filename)
+        app.set_reload_intervals(.3) 
+        time.sleep(1000000000)
+
 
