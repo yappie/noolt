@@ -1,6 +1,6 @@
 `noolt` is an web application server with REAL and QUICK reloading, like in PHP 
 (`noolt` actually spawns new processes for each application). Reloading isn't
-as simple as you could think - see http://bugs.python.org/issue9072#msg108558 
+as simple as you could think - see [here](http://bugs.python.org/issue9072#msg108558)
 for information from Python developers that started me on this quest.
 
 Example
@@ -20,8 +20,8 @@ Create file `~/web/app1/index.py`:
     def index(r):
         print "Hello, World"
 
-Go to http://127.0.0.1:8091/. Change something in `~/web/app1/index.py` and
-see it instantly reload. By default `noolt` is configured to check for reloading
+Go to http://127.0.0.1:8091/ in your browser. Change something in `~/web/app1/index.py` 
+and see it instantly reload. By default `noolt` is configured to check for reloading
 only at most 3 times per second, which is fast enough to be used in most 
 production installations. See below on how to change it.
 
