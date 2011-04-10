@@ -28,7 +28,7 @@ production installations. See below on how to change it.
 Installation
 ============
 
-    git clone https://yappie@github.com/yappie/noolt.git noolt
+    git clone git://github.com/yappie/noolt.git noolt
     cd noolt
     sudo python setup.py install
     cd ..
