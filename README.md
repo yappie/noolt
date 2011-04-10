@@ -63,7 +63,9 @@ does for you).
     def index(r):
         print "Hello, World"
 
-Run `python server.py`
+Run: 
+
+    python server.py
     
 Then make changes to `hello_world.py` and instantly see changes appear.
 `hosts` define host and port which the application will respond (you can change
@@ -72,3 +74,57 @@ those "on-fly") and even have many hosts/ports for each application.
 I haven't developed `noolt` in quite some time, but I feel it might be useful.
 
 `noolt` uses CherryPy's excellent WSGI server.
+
+Missing features
+================
+
+File upload not wrapped yet, but it's somewhere in the `r` variable.
+
+r variable
+==========
+
+Variable that gets sent to `index` function is like this:
+
+    r.wsgi = {
+     'ACTUAL_SERVER_PROTOCOL': 'HTTP/1.1',
+     'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+     'HTTP_ACCEPT_CHARSET': 'windows-1251,utf-8;q=0.7,*;q=0.3',
+     'HTTP_ACCEPT_ENCODING': 'gzip,deflate,sdch',
+     'HTTP_ACCEPT_LANGUAGE': 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4',
+     'HTTP_CACHE_CONTROL': 'max-age=0',
+     'HTTP_CONNECTION': 'keep-alive',
+     'HTTP_COOKIE': '....',
+     'HTTP_HOST': '127.0.0.1:8091',
+     'HTTP_USER_AGENT': 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/534.27 (KHTML, like Gecko) Chrome/12.0.712.0 Safari/534.27',
+     'PATH_INFO': '/',
+     'QUERY_STRING': '',
+     'REMOTE_ADDR': '127.0.0.1',
+     'REMOTE_PORT': '46824',
+     'REQUEST_METHOD': 'GET',
+     'SCRIPT_NAME': '',
+     'SERVER_NAME': 'localhost',
+     'SERVER_PORT': '8091',
+     'SERVER_PROTOCOL': 'HTTP/1.1',
+     'SERVER_SOFTWARE': 'CherryPy/3.1.2 WSGI Server',
+     'wsgi.multiprocess': False,
+     'wsgi.multithread': True,
+     'wsgi.run_once': False,
+     'wsgi.url_scheme': 'http',
+     'wsgi.version': [1, 0]
+    }
+
+so you can refer to those like this: `r.wsgi['HTTP_HOST']`
+
+Suppressing tracebacks
+======================
+
+Currently this can only be done via "low level" (see above) by setting:
+
+    def quiet_traceback(traceback_text):
+        return ""
+
+    app.reformat_traceback = lambda(traceback_text): 1
+    
+Basically `reformat_traceback` receives text representation of traceback
+
+
