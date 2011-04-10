@@ -130,7 +130,7 @@ Basically `reformat_traceback` receives text representation of traceback
 Controlled production
 =====================
 
-Most of production environment could go away with usual `noolt`, here is a more
+Most of production environment could use usual `noolt` reloading, here is a more
 strict version, that uses flag file to detect when to reload (redefine `is_production`
 yourself somehow):
 
