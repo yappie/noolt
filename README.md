@@ -1,5 +1,7 @@
 `noolt` is an web application server with REAL and QUICK reloading, like in PHP 
-(`noolt` actually spawns new processes for each application)
+(`noolt` actually spawns new processes for each application). Reloading isn't
+as simple as you could think - see http://bugs.python.org/issue9072#msg108558 
+for information from Python developers that started me on this quest.
 
 Example
 =======
