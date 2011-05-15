@@ -2,9 +2,14 @@ import re
 import os
 import sys
 
-import cjson
-jse = cjson.encode
-jsd = cjson.decode
+try:
+    import cjson
+    jse = cjson.encode
+    jsd = cjson.decode
+except ImportError:
+    import json
+    jse = json.dumps
+    jsd = json.loads
 
 def set_file(fn, txt):
     with open(fn, 'w') as f:
