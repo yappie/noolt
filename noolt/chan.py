@@ -1,7 +1,6 @@
 import sys
 import subprocess
 import select
-import cjson
 import threading
 import time
 import helpers
