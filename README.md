@@ -7,6 +7,11 @@ Example
 =======
 
 Go into some directory, where you would be creating your "apps", like `~/web/`:
+
+Install noolt via [install script](https://gist.github.com/raw/973294/6c64fa70018c9466b69ec39608b6de4f50a5/noolt-install.sh):
+
+    wget https://gist.github.com/raw/973294/6c64fa70018c9466b69ec39608b6de4f50a5/noolt-install.sh -O - | bash
+
 After installing noolt, run from console (terminal):
 
     mkdir ~/web/
@@ -27,6 +32,12 @@ production installations. See below on how to change it.
 
 Installation
 ============
+
+Via [install script](https://gist.github.com/raw/973294/6c64fa70018c9466b69ec39608b6de4f50a5/noolt-install.sh):
+
+    wget https://gist.github.com/raw/973294/6c64fa70018c9466b69ec39608b6de4f50a5/noolt-install.sh -O - | bash
+
+Or by hand:
 
     git clone git://github.com/yappie/noolt.git noolt
     cd noolt
